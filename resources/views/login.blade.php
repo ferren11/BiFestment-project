@@ -37,17 +37,17 @@
             </div>
 
             <div class="form-container text-white">
-              <form class="container-lg">
+              <form class="container-lg row">
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example1" class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
+                    <input type="email" id="email" class="form-control" placeholder="example@binus.ac.id"/>
+                    <label class="form-label" for="email">Binusian Email</label>
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example2" class="form-control" />
-                    <label class="form-label" for="form2Example2">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="min. consists 8 characters"/>
+                    <label class="form-label" for="password">Password</label>
                   </div>
 
                   <!-- 2 column grid layout for inline styling -->
@@ -55,8 +55,8 @@
                     <div class="col d-flex justify-content-center">
                       <!-- Checkbox -->
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                        <label class="form-check-label" for="form2Example31"> Remember me </label>
+                        <input class="form-check-input" type="checkbox" value="" id="remember-me" checked />
+                        <label class="form-check-label" for="remember-me"> Remember me </label>
                       </div>
                     </div>
 
