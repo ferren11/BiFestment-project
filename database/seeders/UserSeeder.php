@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     {
         //
         User::insert([
-            'student_id' => 2440013071,
+            'student_id' => '2440013071',
             'name' => 'Felicia Ferren',
             'faculty' => 'School of Computer Science',
             'email' => 'felicia.ferren@binus.ac.id',

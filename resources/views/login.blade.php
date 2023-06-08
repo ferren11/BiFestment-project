@@ -40,13 +40,13 @@
               <form class="container-lg row">
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <input type="email" id="email" class="form-control" placeholder="example@binus.ac.id"/>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="example@binus.ac.id"/>
                     <label class="form-label" for="email">Binusian Email</label>
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <input type="password" id="password" class="form-control" placeholder="min. consists 8 characters"/>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="min. consists 8 characters"/>
                     <label class="form-label" for="password">Password</label>
                   </div>
 
@@ -55,7 +55,7 @@
                     <div class="col d-flex justify-content-center">
                       <!-- Checkbox -->
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="remember-me" checked />
+                        <input class="form-check-input" type="checkbox" value="" id="remember" name="remember" checked />
                         <label class="form-check-label" for="remember-me"> Remember me </label>
                       </div>
                     </div>
@@ -67,7 +67,7 @@
                   </div>
 
                   <!-- Submit button -->
-                  <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+                  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
                   <!-- Register buttons -->
                   <div class="text-center">
