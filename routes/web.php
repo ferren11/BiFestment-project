@@ -18,3 +18,5 @@ Route::get('/login', [UserController::class, 'loginIndex'])->name('loginIndex');
 
 Route::get('/register', [UserController::class, 'registerIndex'])->name('registerIndex');
 Route::post('/register',[UserController::class, 'register'])->name('register');
+
+Route::get('/profile', [UserController::class, 'showProfile']);

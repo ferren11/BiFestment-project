@@ -10,13 +10,14 @@
     <title>{{ config('name', 'BiFestment') }} || @yield('title')</title>
 
     <!-- Fonts: Ganti Font -->
-    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Fira-Sans" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}">
+    @yield('css')
+
 
     {{-- style --}}
     {{-- <style>
@@ -24,38 +25,36 @@
             font-family: "Fira Sans", sans-serif;
         }
     </style> --}}
-
 </head>
 <body>
-    <div id="app">
-        {{-- navbar: Ganti --}}
-        {{-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-            <div class="container mt-2 ms-3 me-3">
-                <div class="logo pb-2">
-                    <a class="brand-name" href="{{ route('home') }}" style="text-decoration:none" >STARBUCKS</a>
+    <!-- Header -->
+    <nav class="navbar sticky-top container-fluid navbar-expand-lg navbar-light bg-light p-3">
+        <div class="container-fluid">
+            <div class="navbar-collapse container-fluid d-flex justify-content-between m-0" id="navbar">
+                <div class="navbar-brand ms-2" href="#">
+                    <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="">
                 </div>
-                <div class="d-flex justify-content-between w-100 align-items-center">
-                    <div class="greeting">
-                        <h5 class="fw-bold">{{ $greeting }}, </h5>
-                        <h5 class="fw-bold">{{ $user->name }}</h5>
-                    </div>
-                    <div class="loyalty-status">
-                        <h5>{{ $user->loyaltyStatus }}</h5>
-                    </div>
+
+                <div class="collapse navbar-collapse search_box d-flex justify-content-center">
+                    <input type="search" placeholder="Search event here">
+                    <span class="fa fa-search"></span>
                 </div>
-                <div class="container d-flex justify-content-center">
-                    <ul class="nav">
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ route('home') }}">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('transactions.index') }}">Transaction</a>
-                        </li>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarText"> -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+                        <li><a class="navmenu" href="#">My Events</a></li>
+                        <li><a class="navmenu" href="#">Favourite</a></li>
+                        <li><a class="navmenu" href="#">Notification</a></li>
+                        <li><a class="navmenu" href="#">Profile</a></li>
                     </ul>
-                </div>
+                <!-- </div> -->
             </div>
-        </nav> --}}
-    </div>
+        </div>
+    </nav>
 
     {{-- Content --}}
     <div class="content mt-3 ms-3 me-3">
@@ -63,10 +62,15 @@
     </div>
 
     {{-- Footer --}}
-    <footer class="bg-light pt-3">
-        {{-- <div class="container text-center footer py-2">
-            <span class="text-white ">© 2023 Starbucks Coffee Company, All Rights Reserved.</span>
-        </div> --}}
+    <footer class="mt-4 text-center text-white">
+        <div class="footer">
+            <!-- Logo -->
+            <div class="p-1 pt-3 m-0">
+                <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="">
+            </div>
+            <!-- Copyright -->
+            <div class="text-center pb-3">Copyright 2023, All Rights Reserved</div>
+         </div>
     </footer>
 </body>
 </html>

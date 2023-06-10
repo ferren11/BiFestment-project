@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    /* font-family:'Poppins', sans-serif; */
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    background:#f0f3f7;
+    /* position: relative; */
+    justify-content: left;
+    align-items: center;
+    /* text-align: center; */
+    padding: 15px 30px;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    background:#f0f3f7;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 30px;
+}
+
+/* nav .icon{
+    font-size: 35px;
+    font-weight: 800;
+    cursor: pointer;
+} */
+
+nav div{
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+}
+
+nav div li{
+    margin: 0 2px;
+}
+
+.navmenu {
+    color: #125582;
+    /* font-size: 50%; */
+    text-decoration: none;
+    font-weight:bold;
+    text-transform: capitalize;
+    padding: 5px 10px;
+}
+
+nav ol li:hover a{
+    text-decoration: underline;
+    color: #3584BB;
+}
+
+nav .search_box{
+    display: flex;
+    margin: auto 0;
+    height: 40px;
+    line-height: 35px;
+}
+
+nav .search_box input{
+    border: none;
+    outline: none;
+    background: white;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 18px;
+    width: 650px;
+}
+ nav .search_box span{
+    color:#125582;
+    font-size: 20px;
+    background-color: white;
+    height: 100%;
+    padding: 8px;
+    padding-right: 18px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+ }
+
+ nav .search_box span:hover{
+    color: #3584BB;
+ }
+
+ nav .bar{
+    position: relative;
+    margin: auto;
+ }
+
+ nav .bar span{
+    position: absolute;
+    color: #125582;
+    font-size: 35px;
+ }
+
+ .image-container {
+    position: relative;
+  }
+
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 95%;
+    background-color: #3584BB; /* Blue overlay color */
+  }
+
+  #tagline {
+    font-size: 300%;
+  }
+
+  .gradient-button {
+    background: linear-gradient(to bottom, #95B0D9, #375A8F);
+    color: white;
+    cursor: pointer;
+  }
+
+  .c-item {
+    height: 480px;
+  }
+
+  .c-img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .footer{
+    width: 100%;
+    /* position:fixed; */
+    bottom: 0;
+    background-color: #21081a;
+  }

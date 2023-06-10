@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+/* PROFILE PAGE */
+.menu {
+    display: grid;
+    padding: 0.7rem 3rem 0rem 0rem;
+}
+
+.menu a{
+    color: black;
+    font-size: 14px;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    text-decoration: underline;
+    color: mediumblue;
+}
+
+/* sidelist */
+#editAccountMenu {
+    background-color: rgb(205, 218, 230);
+    border-radius: 5px;
+    display: grid;
+}
+
+.profile-page{
+    padding: 2rem;
+}
+
+.user-profile {
+    display:flex;
+    margin: 20px;
+}
+
+.edit-account {
+    display: flex;
+    background-color: rgb(205, 218, 230);
+    padding: 2rem;
+    margin-right: 2rem;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.image-profile {
+    text-align: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    display: grid;
+    background-color: rgb(205, 218, 230);
+    border-radius: 20px;
+    padding:5%;
+}
+
+.user-info p {
+    color: black;
+}
+
+.greetings {
+    display: flex;
+}
+
+#pp{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    margin: 0rem 0.5rem 0rem 0rem;
+}
+
+#profile-pic{
+    width: 200px;
+    border-radius:50%;
+}
+
+#edit-picture-button {
+    border-radius:30px;
+    height:50px;
+    margin: 0.7rem 0rem 0rem 0rem;
+    border-color:white;
+}
+
+#edit-picture-button:hover {
+    background-color: white;
+}
+
+.image-profile p {
+    font-size: 10px;
+    padding: 0.1rem 0rem 0rem 0rem;
+    color: darkslategrey;
+}
+
+.user-req-info {
+    display: flex;
+    text-align: left;
+    width: 90%;
+}
+
+.basic-information {
+    padding: 0.7rem 0rem 0.7rem 0rem;
+    width: 100%;
+}
+
+.basic-information p {
+    padding: 12px;
+    font-size: medium;
+}
+
+.user-info p {
+    padding: 0px;
+}
+
+.req-info {
+    width: 10rem;
+}
+
+#edit-information-button {
+    border-radius:30px;
+    justify-content: center;
+    height:50px;
+    width: 100%;
+    margin: 1rem 0rem 0rem 0rem;
+    border-color:white;
+}
+
+#edit-information-button:hover {
+    background-color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    .profile-page {
+        padding: 1.5rem;
+    }
+
+    .user-req-info {
+        display: contents;
+        justify-content: center;
+    }
+
+    .user-info {
+        background-color: rgb(227, 231, 235);
+        border-radius: 2rem;
+        height: fit-content;
+    }
+
+    .basic-information p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .profile-page {
+        align-items: center;
+    }
+    .user-profile {
+        display:grid
+    }
+
+    .edit-account {
+        display:grid;
+        margin-top: 1rem;
+    }
+
+    .req-info {
+        width: 100%;
+        padding: 1rem 0rem;
+    }
+
+    .user-req-info {
+        margin-left: 45px;
+    }
+
+    .user-info {
+        background-color: rgb(227, 231, 235);
+        border-radius: 2rem;
+        width: 100%;
+    }
+
+    .user-req-info p {
+        margin: 0.2rem 0rem;
+    }
+}
+
+/* BURGER */
+.burger-navbar {
+    display: none;
+    margin-right: 1rem;
+    padding-top: 2rem;
+}
+
+#burger-icon {
+    height:40px;
+}
+
+.dropdown-menu {
+    display: none;
+
+}
+
+.dropdown-menu a{
+    /* display: none; */
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .burger-navbar {
+        display: initial;
+    }
+
+    .navbar{
+        justify-content: space-between;
+    }
+
+    .navbar-responsive {
+        position: relative;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        margin-left: 0.8rem;
+        padding: 0.2rem 0rem;
+        display: grid;
+        width: max-content;
+        transform: scaleY(0);
+    }
+
+    .dropdown-menu a{
+        width: 6rem;
+    }
+    .navbar-responsive:hover .dropdown-menu {
+        background-color: aliceblue;
+        transform: scaleY(1);
+    }
+
+    .dropdown-menu a:hover {
+        background-color: white;
+    }
+}

@@ -31,11 +31,12 @@ class UserController extends Controller
     public function register(Request $request){
         $request->validate([
             'name' =>'required|string|max:25',
-            'student_id' => 'required|string|length:10',
+            'student_id' => 'required|numeric|digits:10',
             'faculty' => 'required|in:Faculty of Economics and Communication,Faculty of Humanities,Faculty of Computing, Multimedia and Technology,
             Faculty of Engineering,School of Computer Science,School of Information Systems,Binus Business School,School of Design',
             'email' => 'required|email|ends_with:@binus.ac.id',
-            'password' => 'required|confirmed|min:8'
+            'password' => 'required|confirmed|min:8',
+            'checkbox' =>'required|in:1',
         ]);
 
         $newUser = new User();
@@ -53,4 +54,11 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('welcome');
     }
+
+    public function showProfile(Request $request){
+        $user = User::latest()->first();
+        // return view('profile', ['user' => $user]);
+        return view('profile', compact('user'));
+    }
+
 }
