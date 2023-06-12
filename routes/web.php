@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +17,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', [UserController::class, 'loginIndex'])->name('loginIndex');
+Route::post('/login', [UserController::class, 'login'])->name('login.submit');
 
 Route::get('/register', [UserController::class, 'registerIndex'])->name('registerIndex');
 Route::post('/register',[UserController::class, 'register'])->name('register');
 
 Route::get('/profile', [UserController::class, 'showProfile']);
+
+Route::get('/eventdetail/{eventId}', [EventController::class, 'showDetails'])->name('details');
+
+Route::post('/registerevent/{eventId}', [HistoryController::class, 'regist'])->name('register.event');
+
+Route::get('/homepage', [EventController::class, 'homepageData'])->name('homepage');
+Route::get('/history', [HistoryController::class, 'showHistory']);
+Route::get('/', [EventController::class, 'displayWelcome'])->name('welcome');
+

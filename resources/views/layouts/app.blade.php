@@ -16,8 +16,7 @@
     @vite(['resources/js/app.js'])
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
     <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}">
-    @yield('css')
-
+    @yield('cssjs')
 
     {{-- style --}}
     {{-- <style>
@@ -61,16 +60,15 @@
         @yield('content')
     </div>
 
-    {{-- Footer --}}
-    <footer class="mt-4 text-center text-white">
-        <div class="footer">
-            <!-- Logo -->
-            <div class="p-1 pt-3 m-0">
-                <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="">
-            </div>
-            <!-- Copyright -->
-            <div class="text-center pb-3">Copyright 2023, All Rights Reserved</div>
-         </div>
+    <!-- FOOTER -->
+    <footer class="footer mt-4 text-center text-white" style="background-color: #21081a; bottom: 0;">
+        <!-- Logo -->
+        <div class="p-1 pt-3 m-0">
+            <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="">
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center pb-3">Copyright 2023, All Rights Reserved</div>
     </footer>
 </body>
 </html>

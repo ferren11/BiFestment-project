@@ -2,6 +2,10 @@
 
 @section('title', 'Register')
 
+@section('cssjs')
+<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+@endsection
+
 @section('content')
 <section class="vh-auto apply-background">
     <div class="container h-auto">
@@ -52,8 +56,8 @@
                                 <option {{ old('jurusan') == 'Faculty of Engineering' ? 'selected' : '' }}>
                                     Faculty of Engineering
                                 </option>
-                                <option {{ old('jurusan') == 'Faculty of Computing, Multimedia and Technology' ? 'selected' : '' }}>
-                                    Faculty of Computing, Multimedia and Technology
+                                <option {{ old('jurusan') == 'Faculty of Computing Multimedia and Technology' ? 'selected' : '' }}>
+                                    Faculty of Computing Multimedia and Technology
                                 </option>
                                 <option {{ old('jurusan') == 'Faculty of Humanities' ? 'selected' : '' }}>
                                     Faculty of Humanities
@@ -113,7 +117,7 @@
                     </div>
 
                     <div class="form-check d-flex justify-content-left mb-5">
-                        <input class="form-check-input me-2" type="checkbox" value="{{ old('checkbox') }}" id="checkbox"/>
+                        <input class="form-check-input me-2" type="checkbox" id="checkbox" name="checkbox" {{ old('checkbox') ? 'checked' : '' }}/>
                         <label class="form-check-label" for="form2Example3">
                             <a href="#!">I agree to the Terms and Conditions</a>
                         </label>
@@ -124,6 +128,11 @@
 
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                        @if($message = Session::get('success'))
+                            <div class="alert alert-success">
+                                <p>{{$message}}</p>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="d-flex justify-content-center">

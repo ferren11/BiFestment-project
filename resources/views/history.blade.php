@@ -2,7 +2,7 @@
 
 @section('title', 'Profile')
 
-@section('css')
+@section('cssjs')
 @endsection
 
 @section('content')

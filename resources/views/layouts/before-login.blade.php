@@ -15,7 +15,7 @@
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+    @yield('cssjs')
 
     {{-- style --}}
     {{-- <style>
@@ -25,5 +25,7 @@
     </style> --}}
 </head>
 <body>
+    @yield('header')
     @yield('content')
+    @yield('footer')
 </html>

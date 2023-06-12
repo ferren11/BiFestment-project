@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -25,29 +26,32 @@ class UserController extends Controller
         if(!Auth::attempt($credentials, $request->remember)){
             return redirect()->back()->withErrors('Invalid Credentials');
         }
-        return redirect()->route('home');
+
+        $user = Auth::user();
+        return redirect()->route('homepage', compact('user'));
     }
 
     public function register(Request $request){
         $request->validate([
             'name' =>'required|string|max:25',
             'student_id' => 'required|numeric|digits:10',
-            'faculty' => 'required|in:Faculty of Economics and Communication,Faculty of Humanities,Faculty of Computing, Multimedia and Technology,
+            'faculty' => 'required|in:Faculty of Economics and Communication,Faculty of Humanities,Faculty of Computing Multimedia and Technology,
             Faculty of Engineering,School of Computer Science,School of Information Systems,Binus Business School,School of Design',
             'email' => 'required|email|ends_with:@binus.ac.id',
             'password' => 'required|confirmed|min:8',
-            'checkbox' =>'required|in:1',
+            'checkbox' =>'accepted',
         ]);
 
         $newUser = new User();
         $newUser->name =$request->input('name');
-        $newUser->student_id = $request->input('student');
+        $newUser->student_id = $request->input('student_id');
         $newUser->faculty = $request->input('faculty');
         $newUser->email = $request->input('email');
         $newUser->password = Hash::make($request->input('password'));
 
         $newUser->save();
-        return redirect()->route('login');
+        Session::flash('success', 'Registration successful!');
+        return redirect()->route('loginIndex')->with('success', 'Registration successful!');
     }
 
     public function logout(){

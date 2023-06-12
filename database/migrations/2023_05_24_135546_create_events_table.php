@@ -17,17 +17,19 @@ return new class extends Migration
             $table->id();
             $table->string('event_name');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('event_price');
+            // $table->unsignedBigInteger('event_price');
             $table->string('event_place');
             $table->string('event_date');
             $table->string('event_time');
             $table->longText('event_desc');
             $table->string('event_benefit');
-            $table->unsignedBigInteger('event_participant');
-            $table->boolean('favorite');
+            $table->string('event_organizer');
+            $table->unsignedBigInteger('event_capacity');
+            // $table->boolean('favorite');
             $table->longText('event_image');
 
             $table->foreign('category_id')->references('id')->on('event_categories')->onDelete('cascade');
+
         });
 
     }
