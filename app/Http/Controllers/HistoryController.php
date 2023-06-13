@@ -32,47 +32,28 @@ class HistoryController extends Controller
         $currentMonth = Carbon::now()->month;
         $currentYear = Carbon::now()->year;
 
-        // $upcomingCount = History::whereMonth('created_at', $currentMonth)
-        //     ->whereYear('created_at', $currentYear)->count();
-        $upcomingCount = $user->history()
-            ->whereMonth('created_at', $currentMonth)
-            ->whereYear('created_at', $currentYear)->count();
-
-        // $totalevent = History::count();
         $totalevent = $user->history()->count();
 
         $currentDate = Carbon::now();
-        // $upcomingEvents = History::all()->filter(function ($event) {
-        //     $currentDate = Carbon::now();
-
-        //     // Parse the event_date and check if it is in the future
-        //     $eventDate = Carbon::createFromFormat('l, d F Y', $event->event_date);
-        //     return $eventDate->isFuture();
-        // })->sortBy('event_date');
-
-        // $pastEvents = History::all()->filter(function ($event) {
-        //     $currentDate = Carbon::now();
-
-        //     // Parse the event_date and check if it is in the future
-        //     $eventDate = Carbon::createFromFormat('l, d F Y', $event->event_date);
-        //     return $eventDate->isPast();
-        // })->sortBy('event_date');
 
         $upcomingEvents = $user->history()->get()->filter(function ($event) use ($currentDate) {
             $eventDate = Carbon::createFromFormat('l, d F Y', $event->event->event_date);
             return $eventDate->isFuture();
         })->sortBy('event_date');
+        $upcomingCount = $upcomingEvents->count();
 
         $pastEvents = $user->history()->get()->filter(function ($event) use ($currentDate) {
             $eventDate = Carbon::createFromFormat('l, d F Y', $event->event->event_date);
             return $eventDate->isPast();
         })->sortBy('event_date');
+        $pastCount = $pastEvents->count();
 
         $allData = [
             'totalevent' => $totalevent,
             'upcomingEvents' => $upcomingEvents,
             'upcomingCount' => $upcomingCount,
             'pastEvents' => $pastEvents,
+            'pastCount' =>$pastCount,
         ];
 
         return view('history', $allData);

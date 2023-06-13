@@ -135,6 +135,16 @@
                     <div class="container px-0 py-2">
                         <div class="row">
                             <div class="col-8 mx-3">
+                                <p class="m-0">Total Past Events</p>
+                            </div>
+                            <div class="col text-end mx-3">
+                                <p class="m-0 justify-content-end">{{ $pastCount }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container px-0 py-2">
+                        <div class="row">
+                            <div class="col-8 mx-3">
                                 <p class="m-0">Total Registered Events</p>
                             </div>
                             <div class="col text-end mx-3">
