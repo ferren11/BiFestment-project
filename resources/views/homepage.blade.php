@@ -21,17 +21,15 @@
         <h1 class="mb-2 fw-bold fs-1" id="tagline">Invest in Yourself!</h1>
         <p class="m-0 fst-italic fw-semibold">Cause it's the best investment you can give for your future self</p>
     </div>
-</div>
+    </div>
 
-<div class="row mt-4 mx-5 mb-3">
+    <div class="row mt-4 mx-5 mb-3">
     <!-- Carousel -->
     <div class="me-3" style="width: 70%">
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-            {{-- <ol class="carousel-indicators"> --}}
-                @foreach($event_ads as $key => $item)
-                    <ol data-bs-target="#myCarousel" data-bs-slide-to="{{ $key }}" @if ($loop->first) class="active" @endif></li>
-                @endforeach
-            {{-- </ol> --}}
+            @foreach($event_ads as $key => $item)
+                <ol data-bs-target="#myCarousel" data-bs-slide-to="{{ $key }}" @if ($loop->first) class="active" @endif></li>
+            @endforeach
 
             <div class="carousel-inner" style="margin-left: 2%;">
                 @foreach ($event_ads as $key => $item)
@@ -53,10 +51,10 @@
     </div>
 
     <!-- Upcoming Events -->
-    <div class="p-0 ms-4" style="width: 20%">
+    <div class="p-0 ms-4" style="width: 20%;">
         <!-- event information -->
         <div class="card">
-            <h5 class="text-center pt-3 pb-2 fs-5 fw-bold">My Upcoming Event</h5>
+            <h5 class="text-center pt-3 pb-2 fs-5 fw-bold" style="margin-bottom: 30px;">My Upcoming Event</h5>
 
             @if ($upcomingevent)
                 @php
@@ -88,10 +86,10 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
-<!-- Event List -->
-<div class="container">
+    <!-- Event List -->
+    <div class="container">
     <div class="row">
         <div class="col">
             @foreach ($eventcategories as $category)
@@ -107,8 +105,8 @@
 
                     @foreach ($events as $event)
                         @if ($event->category_id == $category->id && $count < 5)
-                            <a id="eventCard" style="all:unset;" href="{{ route('details', ['eventId' => $event->id]) }}">
-                                <div class="col mb-2 mt-0 mx-0">
+                        <div class="col mb-2 mt-0 mx-0">
+                                    <a id="eventCard" style="all:unset;" href="{{ route('details', ['eventId' => $event->id]) }}">
                                     <div class="mb-4 shadow-sm rounded">
                                         <img src="{{ $event -> event_image }}" class="card-img-top mb-1" alt="{{ $event -> event_name }}">
                                         <div class="mx-3 mb-0 mt-1">
@@ -125,18 +123,6 @@
                                             @php
                                                 $count++;
                                             @endphp
-                                            {{-- <div class="container px-0 py-2">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        @if ($event->event_price === 0)
-                                                            <h6 class="fw-bold text-danger m-0" style="font-size: large;">FREE</h6>
-                                                        @else
-                                                            <h6 class="fw-bold text-danger m-0" style="font-size: large;">Rp{{ $event->event_price }}</h6>
-                                                        @endif
-                                                    </div>
-                                                    <div class="col text-end"><p class="m-0 justify-content-end" style="font-size: small;">{{ $event->event_participant }} Registered</p></div>
-                                                </div>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -148,5 +134,16 @@
         </div>
     </div>
 </div>
+
+<!-- FOOTER -->
+<footer class="footer mt-4 text-center text-white">
+    <!-- Logo -->
+    <div class="p-1 pt-3 m-0">
+        <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="Bifestment-logo">
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center pb-3">Copyright 2023, All Rights Reserved</div>
+</footer>
 @endsection
 

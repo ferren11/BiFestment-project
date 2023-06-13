@@ -18,8 +18,15 @@
     <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}">
     @yield('cssjs')
 
-    {{-- style --}}
-    @yield('style')
+    <style>
+        body {
+            background-image: url('../assets/main-background.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+          /* background-color: #0084B1; Replace with your desired color */
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -32,11 +39,9 @@
                     </div>
                 </a>
 
-                <div class="search_box d-flex justify-content-center navbar-collapse collapse">
-                    <form style="all:unset;" class="collapse navbar-collapse" action="{{ route('events.search') }}" method="GET" class="search-form">
-                        <input type="search" name="search" placeholder="Search event here" class="search-input p-2">
-                        <button style="all:unset;" type="submit" class="search-button"><span class="fa fa-search"></span></button>
-                    </form>
+                <div class="collapse navbar-collapse search_box d-flex justify-content-center">
+                    <input type="search" placeholder="Search event here">
+                    <span class="fa fa-search"></span>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +61,20 @@
     </nav>
 
     {{-- Content --}}
-    {{-- <div class="content mt-3 ms-3 me-3"> --}}
-        @yield('content')
-    {{-- </div> --}}
-
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="text-left" style="margin-top: 220px; height:300px; color:white;">
+              <h1>Site under construction</h1>
+              <p>We sincerely apologize for the inconvenience. We still construct the page you're looking for. Don't you worry, the best is yet to come.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-center" style="margin-top: 60px; height:300px;">
+              <img src="{{ URL::asset('assets/under-construction.png') }}" alt="Image" class="img-fluid" width="500px">
+            </div>
+          </div>
+        </div>
+    </div>
 </body>
 </html>

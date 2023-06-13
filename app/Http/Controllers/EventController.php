@@ -6,6 +6,7 @@ use App\Models\EventAds;
 use App\Models\Event;
 use App\Models\EventCategory;
 use App\Models\History;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -16,21 +17,34 @@ class EventController extends Controller
         return $event_ads;
     }
 
-    public function EventListController() {
-        $events = Event::with('eventCategory')->get();
-        return $events;
-    }
-
     public function EventCategoryController() {
         $eventcategories = EventCategory::all();
         return $eventcategories;
     }
 
-    public function upcomingEventController() {
-        $upcomingevents = History::where('event_date', History::min('event_date'))->first();
-        return $upcomingevents;
+    public function EventListController() {
+        $currentDate = Carbon::now();
+        $events = Event::all()
+            ->filter(function ($event) use ($currentDate) {
+                return Carbon::createFromFormat('l, d F Y', $event->event_date)->isFuture();
+            });
+        return $events;
     }
 
+    public function upcomingEventController() {
+            $currentDate = Carbon::now();
+            $events = History::all()->filter(function ($event) {
+                    // Get the current date
+                    $currentDate = Carbon::now();
+
+                    // Parse the event_date and check if it is in the future
+                    $eventDate = Carbon::createFromFormat('l, d F Y', $event->event_date);
+                    return $eventDate->isFuture();
+                })->sortBy('event_date');
+
+            $upcomingevents = $events->first();
+            return $upcomingevents;
+        }
 
     public function homepageData() {
         $event_ads = $this->EventAdsController();
@@ -68,5 +82,22 @@ class EventController extends Controller
 
         // Pass the event details to the details view
         return view('eventDetail', ['event' => $event]);
+    }
+
+    public function search(Request $request) {
+        $searchTerm = $request->input('search');
+        $currentDate = Carbon::now();
+
+        $events = Event::where('event_name', 'like', '%' . $searchTerm . '%')
+            ->orWhereHas('eventCategory', function ($query) use ($searchTerm) {
+                $query->where('category_name', 'like', '%' . $searchTerm . '%');
+            })
+            ->orderBy('event_date')
+            ->get()
+            ->filter(function ($event) use ($currentDate) {
+                return Carbon::createFromFormat('l, d F Y', $event->event_date)->isFuture();
+            });
+
+        return view('searchResultPage', ['events' => $events, 'searchTerm' => $searchTerm]);
     }
 }

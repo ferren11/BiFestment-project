@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-3">
                             <div class="row justify-content-center">
-                                <img src="{{ $event->event_image }}" alt="">
+                                <img src="{{ URL::asset($event->event_image) }}" alt="">
                             </div>
                             <div class="row justify-content-center">
                                 <button type="button" class="btn regist-btn btn-danger rounded-pill m-4" style="width: 280px; height: 40px;" data-bs-toggle="modal" data-bs-target="#registerEventModal" data-event-id="1">
@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="modal-body row py-0 mt-2">
                                             <div class="col text-center m-0">
-                                                <img src="{{ $event->event_image }}" class="w-100" alt="event-image">
+                                                <img src="{{ URL::asset($event->event_image) }}" class="w-100" alt="event-image">
                                             </div>
                                             <div class="col">
                                                 <p style="margin-bottom:5px;font-size:13px">{{ $event->event_organizer }}</p>

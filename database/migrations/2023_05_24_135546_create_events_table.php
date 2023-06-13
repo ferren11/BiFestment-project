@@ -29,9 +29,7 @@ return new class extends Migration
             $table->longText('event_image');
 
             $table->foreign('category_id')->references('id')->on('event_categories')->onDelete('cascade');
-
         });
-
     }
 
     /**
@@ -44,3 +42,23 @@ return new class extends Migration
         Schema::dropIfExists('events');
     }
 };
+
+class ModifyEventsTable extends Migration
+{
+    public function up()
+    {
+        Schema::table('events', function (Blueprint $table) {
+            $table->dateTime('event_date')->nullable()->change();
+        });
+
+        // Convert the existing event_date values to datetime format
+        DB::statement('UPDATE events SET event_date = STR_TO_DATE(event_date, "%W, %d %M %Y")');
+    }
+
+    public function down()
+    {
+        Schema::table('events', function (Blueprint $table) {
+            $table->string('event_date')->nullable()->change();
+        });
+    }
+}

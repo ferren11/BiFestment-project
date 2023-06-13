@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function history() {
+        return $this->hasMany(History::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

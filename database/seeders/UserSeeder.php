@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +22,7 @@ class UserSeeder extends Seeder
             'name' => 'Felicia Ferren',
             'faculty' => 'School of Computer Science',
             'email' => 'felicia.ferren@binus.ac.id',
-            'password' => 'felicia123',
+            'password' => Hash::make('felicia123'),
         ]);
     }
 }

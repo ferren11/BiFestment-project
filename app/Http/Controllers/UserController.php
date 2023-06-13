@@ -62,9 +62,16 @@ class UserController extends Controller
     }
 
     public function showProfile(Request $request){
-        $user = User::latest()->first();
+        $user = Auth::user();
         // return view('profile', ['user' => $user]);
         return view('profile', compact('user'));
     }
 
+    public function favouriteIndex() {
+        return view('favourite');
+    }
+
+    public function notificationIndex() {
+        return view('notification');
+    }
 }

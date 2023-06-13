@@ -6,6 +6,17 @@
 <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
 @endsection
 
+@section('style')
+<style>
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+@endsection
+
 @section('content')
 <div class="profile-page">
     <h1>Profile</h1>
