@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\EventAds;
 use App\Models\Event;
 use App\Models\EventCategory;
+use App\Models\History;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -26,9 +27,10 @@ class EventController extends Controller
     }
 
     public function upcomingEventController() {
-        $upcomingevents = Event::where('event_date', Event::min('event_date'))->first();
+        $upcomingevents = History::where('event_date', History::min('event_date'))->first();
         return $upcomingevents;
     }
+
 
     public function homepageData() {
         $event_ads = $this->EventAdsController();
@@ -65,6 +67,6 @@ class EventController extends Controller
         $event = Event::find($eventId);
 
         // Pass the event details to the details view
-        return view('eventdetail', ['event' => $event]);
+        return view('eventDetail', ['event' => $event]);
     }
 }

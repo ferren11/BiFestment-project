@@ -28,7 +28,7 @@ class EventSeeder extends Seeder
             Saat ini BINUS Center menjadi salah satu AWS Academy yang menyediakan program pelatihan Cloud Computing untuk mempersiapkan menjadi seorang Cloud Computing Specialist yang tersertifikasi.',
             'event_benefit'  => 'BINUS CENTER sebagai AWS AUTHORIZED partner, instruktur yang TERSERTIFIKASI & BERPENGALAMAN, dan berpeluang untuk mengikuti proses MAGANG & PENEMPATAN KERJA.',
             'event_capacity' => 400,
-            'event_image' => 'https://drive.google.com/file/d/1g9TI9kYpOqa3FMI3Pvl-EI_ulmAFj_p4/view?usp=drive_link'
+            'event_image' => 'assets/poster_event/tech1.png'
         ]);
 
         Event::insert([
@@ -42,20 +42,20 @@ class EventSeeder extends Seeder
             Event ini 100% GRATIS! We can not wait to see you there! Reserve your spot now!',
             'event_benefit'  => 'E-Certificate, SAT Points, Merchandise',
             'event_capacity' => 500,
-            'event_image' => 'https://drive.google.com/file/d/1wvgBKJ4WblfcJxmp_xpjC9kLhPvrVyTn/view '
+            'event_image' => 'assets/poster_event/tech2.jpg'
         ]);
 
         Event::insert([
             'event_name'  => 'Scientific Writing: Workshops and Tips & Tricks',
             'category_id' => 1,
             'event_place' => 'Aula B0201-03 (Kampus Alsut)',
-            'event_date'  => 'Monday, 29 Mei 2023',
+            'event_date'  => 'Monday, 29 May 2023',
             'event_time'  => '13.20 - 15.00 GMT+7',
             'event_organizer' => 'Computer Science Program',
             'event_desc'  => 'Publikasi ilmiah merupakan bagian penting dari dunia akademik, riset, industri, dan banyak aspek kehidupan lainnya karena berguna dalam berbagi pengetahuan, pengembangan teknologi, peningkatan kualitas kehidupan, dan banyak hal lainnya. School of Computer Science BINUS University akan mengadakan seminar "Workshop Tips Penulisan Publikasi Ilmiah" secara hybrid. Kegiatan ini bersifat full onsite bagi mahasiswa kampus Alsut, dan online untuk mahasiswa kampus Kemanggisan. (WAJIB untuk mahasiswa semester 4)',
             'event_benefit'  => 'E-Certificate, SAT Points',
             'event_capacity' => 400,
-            'event_image' => 'https://drive.google.com/file/d/1JC62HdfnUlG38rasO7KVS9Jr5c6AB7Es/view?usp=drive_link'
+            'event_image' => 'assets/poster_event/tech3.png'
         ]);
 
         Event::insert([
@@ -68,7 +68,7 @@ class EventSeeder extends Seeder
             'event_desc'  => 'Teknologi Big Data menyediakan kemampuan komputasi dan pengolahan data yang handal dan terjangkau. Hal ini membuka kemungkinan yang sangat luas bagi penerapan dan pengembangan berbagai metode pengolahan data. Big Data Engineering menjadi hal yang terpenting dalam proses perjalanan data. 60% dari keseluruhan proses dari hulu ke hilir dalam pengolahan data berada di proses data engineering. Ayo cari tahu lebih tentang data engineering melalui sesi ini! Jangan Kelewatan, daftar sekarang!',
             'event_benefit'  => 'SAT Points',
             'event_capacity' => 400,
-            'event_image' => 'https://drive.google.com/file/d/17gDag5PV4lMylfIY2nk3FEUeau8QmMWg/view?usp=sharing'
+            'event_image' => 'assets/poster_event/tech4.jpeg'
         ]);
 
         Event::insert([
@@ -81,20 +81,7 @@ class EventSeeder extends Seeder
             'event_desc'  => 'Temukan kekuatan Deep Learning dan jelajahi dunia yang menarik dari Computer Vision. Dapatkan wawasan berharga tentang teknik terbaru dan kemajuan dalam pengenalan gambar, deteksi objek, dan lainnya. Jangan lewatkan kesempatan ini untuk memperluas pengetahuanmu dan menjelajahi dunia Deep Learning untuk Computer Vision',
             'event_capacity' => 400,
             'event_benefit'  => 'SAT Points',
-            'event_image' => 'https://drive.google.com/file/d/1tG5oFNgjRDdon0y_XWI9LLpzOaIQ5mJ7/view?usp=drive_link'
-        ]);
-
-        Event::insert([
-            'event_name'  => 'Deep Learning for Computer Vision',
-            'category_id' => 1,
-            'event_place' => 'Zoom Meetings',
-            'event_date'  => 'Saturday, 27 May 2023',
-            'event_time'  => '11.00 - 12.30 GMT+7',
-            'event_organizer' => '',
-            'event_desc'  => '',
-            'event_capacity' => 100,
-            'event_benefit'  => 'SAT Points',
-            'event_image' => 'https://drive.google.com/file/d/1tG5oFNgjRDdon0y_XWI9LLpzOaIQ5mJ7/view?usp=drive_link'
+            'event_image' => 'assets/poster_event/tech5.png'
         ]);
 
         Event::insert([
@@ -107,21 +94,21 @@ class EventSeeder extends Seeder
             'event_desc'  => 'Management Laboratory proudly presents Webinar Basic Stata for Publication. Management Laboratory proudly presents Webinar Basic Stata for Publication. Kegiatan ini dilakukan untuk memberikan wawasan kepada mahasiswa tentang salah satu alat analisis data yang baik untuk dipakai, yaitu Stata.STATA menawarkan fitur analisis yang sangat komprehensif untuk kepentingan analisis dan research/publikasi. Dengan adanya acara ini diharapkan mahasiswa memiliki kebebasan untuk memilih alat analisis data.',
             'event_capacity' => 300,
             'event_benefit'  => 'Skills&Knowledge, SAT Points, E-Certificate',
-            'event_image' => ''
+            'event_image' => 'assets/poster_event/business6.jpg'
         ]);
 
         Event::insert([
             'event_name'  => 'Tips membuat CV & Tips menghadapi Interview',
             'category_id' => 2,
             'event_place' => 'Zoom Meetings',
-            'event_date'  => 'Friday, 9 June 2023',
+            'event_date'  => 'Business	Friday, 9 June 2023',
             'event_time'  => '13.30 - 15.00 GMT+7',
             'event_organizer' => 'BINUS UNIVERSITY ALUMNI RELATION OFFICE',
             'event_desc'  => '"Hi Binusian, mau tahu bagaimana cara membuat CV agar terlihat bagus dan menarik dimata HR?
             Dan apa sajakah tips & trik untuk menghadapi interview? Kalau mau tahu dan penasaran, yuk ikutan Bimbingan Karir ini! *Kegiatan ini gratis ya! Segera gabung yuk, Dont miss it!',
             'event_capacity' => 600,
             'event_benefit'  => 'Skills&Knowledge, SAT Points, E-Certificate',
-            'event_image' => 'https://storage.googleapis.com/eventara-images/posts/2023-6/CtGTgRnMRFP.jpg'
+            'event_image' => 'assets/poster_event/business7.jpg'
         ]);
 
         Event::insert([
@@ -138,7 +125,7 @@ class EventSeeder extends Seeder
             Ha Na Kang (0821 1141 4488)',
             'event_capacity' => 400,
             'event_benefit'  => 'Skills&Knowledge, SAT Points, E-Certificate',
-            'event_image' => 'https://drive.google.com/drive/folders/1Kssc-Yd9Jjzu6n3JOF7iGOJhEvQWBk0a'
+            'event_image' => 'assets/poster_event/business8.png'
         ]);
 
         Event::insert([
@@ -151,7 +138,7 @@ class EventSeeder extends Seeder
             'event_desc'  => '"Maskapai penerbangan kebanggaan Indonesia, PT Garuda Indonesia (Persero) Tbk nyaris bangkrut akibat terlilit hutang senilai 140 triliun rupiah. Lolos dari kepailitan, apa saja manuver yang dilakukan oleh Garuda Indonesia? Yuk kita gali strateginya di acara CEO SPEAKS ON LEADERSHIP WITH GARUDA INDONESIA yang menghadirkan Bapak Irfan Setiaputra (President & CEO PT Garuda Indonesia (Persero) Tbk)"',
             'event_capacity' => 250,
             'event_benefit'  => 'SAT Points, E-Certificate',
-            'event_image' => 'https://drive.google.com/file/d/1PHnqPZo6w9dQJmzmtVqEgL211mqp3CyO/view?usp=drive_link'
+            'event_image' => 'assets/poster_event/business6.png'
         ]);
 
         Event::insert([
@@ -167,6 +154,5 @@ class EventSeeder extends Seeder
             'event_benefit'  => 'SAT Points, E-Certificate',
             'event_image' => 'https://bbs.binus.ac.id/management/wp-content/uploads/sites/5/2023/06/WhatsApp-Image-2023-06-08-at-14.56.40.jpg'
         ]);
-
     }
 }

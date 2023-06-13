@@ -2,7 +2,7 @@
 
 @section('title', 'Profile')
 
-@section('css')
+@section('cssjs')
 <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
 @endsection
 
@@ -20,7 +20,7 @@
             <div class="menu">
                 <a href="/Profile Page/indexProfile.html" id="editAccountMenu">Edit Account Information</a>
                 <a href="#">Change Password</a>
-                <a href="#">Sertificate</a>
+                <a href="#">Certificate</a>
                 <a href="#">Event History</a>
                 <a href="#">Favourite Events</a>
             </div>
@@ -40,17 +40,20 @@
 
                 <div class="user-req-info">
                     <p class="req-info">NIM</p>
-                    {{-- <p class="user-info">{{$user->student_id}}</p> --}}
+                    <p class="user-info">{{$user->student_id}}</p>
                 </div>
 
                 <div class="user-req-info">
                     <p class="req-info">Faculty</p>
                     <p class="user-info">{{$user->faculty}}</p>
+                </div>
 
                 {{-- BUTTON EDIT PROFILE     --}}
-                {{-- </div>
-                    <button id="edit-information-button">Edit Personal Information</button>
-                </div> --}}
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="mx-1 row btn btn-primary">Logout</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

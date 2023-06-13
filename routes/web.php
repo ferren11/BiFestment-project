@@ -17,18 +17,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', [UserController::class, 'loginIndex'])->name('loginIndex');
-Route::post('/login', [UserController::class, 'login'])->name('login.submit');
+Route::post('/login', [UserController::class, 'login'])->name('loginSubmit');
 
 Route::get('/register', [UserController::class, 'registerIndex'])->name('registerIndex');
 Route::post('/register',[UserController::class, 'register'])->name('register');
 
-Route::get('/profile', [UserController::class, 'showProfile']);
+Route::get('/profile', [UserController::class, 'showProfile'])->name('showProfile');
+Route::post('/profile', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/eventdetail/{eventId}', [EventController::class, 'showDetails'])->name('details');
-
 Route::post('/registerevent/{eventId}', [HistoryController::class, 'regist'])->name('register.event');
 
 Route::get('/homepage', [EventController::class, 'homepageData'])->name('homepage');
-Route::get('/history', [HistoryController::class, 'showHistory']);
 Route::get('/', [EventController::class, 'displayWelcome'])->name('welcome');
+
+Route::get('/history', [HistoryController::class, 'showHistory'])->name('showHistory');
+
 

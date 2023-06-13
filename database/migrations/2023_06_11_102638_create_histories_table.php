@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('event_id');
+            $table->string('event_date');
 		    $table->timestamps();
-            
+
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
         });
 

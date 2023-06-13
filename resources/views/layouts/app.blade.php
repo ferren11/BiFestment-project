@@ -30,9 +30,11 @@
     <nav class="navbar sticky-top container-fluid navbar-expand-lg navbar-light bg-light p-3">
         <div class="container-fluid">
             <div class="navbar-collapse container-fluid d-flex justify-content-between m-0" id="navbar">
-                <div class="navbar-brand ms-2" href="#">
-                    <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="">
-                </div>
+                <a href="{{ route('homepage') }}">
+                    <div class="navbar-brand ms-2">
+                        <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="bifestment-logo">
+                    </div>
+                </a>
 
                 <div class="collapse navbar-collapse search_box d-flex justify-content-center">
                     <input type="search" placeholder="Search event here">
@@ -45,10 +47,10 @@
 
                 <!-- <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarText"> -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
-                        <li><a class="navmenu" href="#">My Events</a></li>
+                        <li><a class="navmenu" href="{{ route('showHistory') }}">My Events</a></li>
                         <li><a class="navmenu" href="#">Favourite</a></li>
                         <li><a class="navmenu" href="#">Notification</a></li>
-                        <li><a class="navmenu" href="#">Profile</a></li>
+                        <li><a class="navmenu" href="{{ route('showProfile') }}">Profile</a></li>
                     </ul>
                 <!-- </div> -->
             </div>
@@ -61,7 +63,7 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="footer mt-4 text-center text-white" style="background-color: #21081a; bottom: 0;">
+    <footer class="footer mt-4 text-center text-white">
         <!-- Logo -->
         <div class="p-1 pt-3 m-0">
             <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="200px" alt="">

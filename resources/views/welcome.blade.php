@@ -1,6 +1,6 @@
 @extends('layouts.before-login')
 
-@section('title', 'Homepage')
+@section('title', 'Welcome Page')
 
 @section('cssjs')
 <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}">
@@ -13,9 +13,11 @@
 <nav class="navbar sticky-top container-fluid navbar-expand-lg navbar-light bg-light p-3">
     <div class="container-fluid">
         <div class="navbar-collapse container-fluid d-flex justify-content-between m-0" id="navbar">
-            <div class="navbar-brand ms-2" href="{{ route('welcome') }}">
-                <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="180px" alt="">
-            </div>
+            <a href="{{ route('welcome') }}">
+                <div class="navbar-brand ms-2">
+                    <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="180px" alt="">
+                </div>
+            </a>
 
             <div class="collapse navbar-collapse search_box d-flex justify-content-center">
                 <input type="search" placeholder="Search event here">
@@ -38,13 +40,14 @@
 @section('content')
 <!-- BODY -->
     <!-- welcoming -->
-    <div class="image-container">
-        <img src="{{ URL::asset('assets/seminar-conference.jpg') }}" alt="Image">
+    {{-- masih error viewnya --}}
+    {{-- <div class="image-container">
+        <img src="{{asset ('/seminar-conference.jpg')}}" alt="Image">
         <div class="overlay text-light d-flex justify-content-center flex-column text-center">
             <h1 class="mb-2 fw-bold fs-1" id="tagline">Invest in Yourself!</h1>
             <p class="m-0 fst-italic fw-semibold">Cause it's the best investment you can give for your future self</p>
         </div>
-    </div>
+    </div> --}}
 
     <div class="row mt-4 mx-5 mb-3">
         <!-- Carousel -->
@@ -81,20 +84,24 @@
                 <div class="text-center">
                     <img src="https://cdni.iconscout.com/illustration/premium/thumb/user-rating-4118325-3414906.png" class="w-75" alt="newuser-illustration">
                 </div>
-                <h6 class="px-3 pb-1 pt-2 m-0 fs-5 text-center">New here? Register now to experience more!</h6>
-                <p class="px-3 pt-0 pb-3 m-0 text-center" style="font-size: medium;">Already have an account? Welcome back! Sign in to your account!</p>
+                <h6 class="px-3 pb-1 pt-2 m-2 fs-5 text-center">New here? Register now to experience more!</h6>
+                <p class="px-3 pt-0 pb-3 m-2 text-center" style="font-size: medium;">Already have an account? Welcome back! Sign in to your account!</p>
             </div>
 
             <!-- login/regist button -->
             <div class="row ms-1">
                 <div class="col text-center rounded p-0">
-                    <a href="{{ route('loginIndex') }}" class="btn w-100 pb-1 pt-2 mt-2 mx-0 gradient-button">
-                        <h6 class="text-light">Login</h6>
+                    <a href="{{ route('loginIndex') }}">
+                        <button type="button" class="btn w-100 pb-1 pt-2 mt-2 mx-0 gradient-button">
+                            <h6 class="text-light">Login</h6>
+                        </button>
                     </a>
                 </div>
                 <div class="col text-center rounded">
-                    <a href="{{ route('registerIndex') }}" class="btn w-100 pb-1 pt-2 mt-2 mx-0 gradient-button">
-                        <h6 class="text-light">Register</h6>
+                    <a href="{{ route('registerIndex') }}">
+                        <button type="button" class="btn w-100 pb-1 pt-2 mt-2 mx-0 gradient-button">
+                            <h6 class="text-light">Register</h6>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -135,7 +142,7 @@
                         @endforeach
 
                         {{-- PopUp Regist/Login Button --}}
-                         <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -148,13 +155,14 @@
                                         </div>
                                         <div class="col mb-3">
                                             <p class="mt-3">You need to be logged in to access this page! or register yourself to experience all features in Bifestment! Let's invest more for the future you!</p>
-                                            <button type="button" class="mx-1 row btn btn-primary" href="/login">Log in</button>
-                                            <button type="button" class="mx-1 row btn btn-outline-danger" href="/register">Register</button>
+                                            <a href="{{ route('loginIndex') }}"><button type="button" class="mx-1 row btn btn-primary" >Log in</button></a>
+                                            <a href="{{ route('registerIndex') }}"><button type="button" class="mx-1 row btn btn-outline-danger" >Register</button></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 @endforeach
             </div>

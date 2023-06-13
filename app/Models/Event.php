@@ -12,4 +12,8 @@ class Event extends Model
     public function eventCategory() {
         return $this->belongsTo(EventCategory::class, 'category_id');
     }
+
+    public function eventHistory() {
+        return $this->hasMany(History::class);
+    }
 }

@@ -9,9 +9,11 @@
 @section('header')
 {{-- navbar --}}
 <nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand" href="#" >
-        <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="160px" alt="">
-    </div>
+    <a href="{{ route('welcome') }}" >
+        <div class="navbar-brand">
+            <img src="{{ URL::asset('assets/BiFestment-Logo.png') }}" width="160px" alt="">
+        </div>
+    </a>
     <div class="slogan fs-3 fw-semibold" style="padding-top: 0.8rem">| Invest in Yourself</div>
 </nav>
 @endsection
@@ -29,7 +31,7 @@
         </div>
 
         <div class="row form-container text-white " style="margin-left: 10%; margin-right: 10%">
-            <form class="container-lg" method="POST" action="{{ route('login.submit') }}">
+            <form class="container-lg" method="POST" action="{{ route('loginSubmit') }}">
                 @csrf
                 <!-- Email input -->
                 <div class="form-outline mb-4">

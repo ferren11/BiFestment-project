@@ -23,6 +23,8 @@ class UserController extends Controller
             'password'=> 'required|min:8'
         ]);
 
+        // dump($credentials); // Dump the credentials
+
         if(!Auth::attempt($credentials, $request->remember)){
             return redirect()->back()->withErrors('Invalid Credentials');
         }
