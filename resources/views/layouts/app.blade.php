@@ -46,8 +46,8 @@
                 <!-- <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarText"> -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
                         <li><a class="navmenu" href="{{ route('showHistory') }}">My Events</a></li>
-                        <li><a class="navmenu" href="{{ route('favouriteIndex') }}">Favourite</a></li>
-                        <li><a class="navmenu" href="{{ route('notificationIndex') }}">Notification</a></li>
+                        {{-- <li><a class="navmenu" href="{{ route('favouriteIndex') }}">Favourite</a></li> --}}
+                        {{-- <li><a class="navmenu" href="{{ route('notificationIndex') }}">Notification</a></li> --}}
                         <li><a class="navmenu" href="{{ route('showProfile') }}">Profile</a></li>
                     </ul>
                 <!-- </div> -->

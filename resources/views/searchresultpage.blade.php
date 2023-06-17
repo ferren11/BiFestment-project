@@ -3,7 +3,6 @@
 @section('title', 'Search Result')
 
 @section('cssjs')
-<link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
 @endsection
 
 @section('content')
