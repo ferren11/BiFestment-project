@@ -90,9 +90,10 @@
                                                 </div>
 
                                                 <div>
-                                                    <form id="registEventForm" method="POST" action="{{ route('register.event', ['eventId' => $event->id]) }}">
+                                                    <form id="registEventForm" method="POST" action="{{ route('register.event', ['eventId' => $event->id]) }} " >
                                                         @csrf
-                                                        <input type="hidden" name="event_id" id="eventId">
+                                                        <input type="hidden" name="event_id" id="eventId" >
+                                                        <input type="hidden" id="registrationStatus" value="{{ session('registration_status') }}">
                                                         <button type="button" class="mx-1 mb-3 confirm-regist-btn row btn text-end" style="background-color: #FCCE75">
                                                             <p class="fw-semibold p-0 m-0">Register</p>
                                                         </button>
@@ -119,6 +120,27 @@
                                             <div style="margin-top:10px; margin-left:12px; margin-right:12px; text-align:center">
                                                 <p>You have been registered to this event. <br>
                                                 You can check your event details in My Events Page</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- PopUp Register Failed --}}
+                            <div class="modal fade" id="registerFailedModal" tabindex="-1" aria-labelledby="registerFailedModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header mb-2 pb-2">
+                                            <h4 class="modal-title text-center" id="registerFailedMmodalLabel">Registration Failed</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="text-center m-0">
+                                            <img src="https://icon-library.com/images/failed-icon/failed-icon-7.jpg" class="" style="width: 30%; height:30%; margin-top:10px" alt="register-failed">
+                                        </div>
+                                        <div class="m-1">
+                                            <div style="margin-top:10px; margin-left:12px; margin-right:12px; text-align:center">
+                                                <p>Sorry, you can't register again to this event <br>
+                                                because you laready have registered for this event</p>
                                             </div>
                                         </div>
                                     </div>

@@ -6,14 +6,12 @@ $(document).ready(function() {
         console.log(eventId);
         data = eventId;
         console.log($('#registerEventModal').val('event-id', eventId));
-      $('#registerEventModal').data('event-id', eventId);
-      $('#registerEventModal').modal('show');
+        $('#registerEventModal').data('event-id', eventId);
+        $('#registerEventModal').modal('show');
     });
 
     $('.confirm-regist-btn').click(function() {
-        console.log(data);
         evid = {dataCof: data};
-        console.log(evid);
         $('#registEventForm').val(evid);
         $('#registEventForm').submit();
 
@@ -25,7 +23,17 @@ $(document).ready(function() {
             window.location.href = "homepage";
         });
 
-        // Show the registerSuccessModal
-        $('#registerSuccessModal').modal('show');
+        // Retrieve the registration status from the data attribute
+        var registrationStatus = $('#registrationStatus').val();
+        console.log(registrationStatus);
+
+        if (registrationStatus === 'failed') {
+            $('#registerFailedModal').modal('show');
+            $('#registerFailedModal').modal({
+                backdrop: 'static'
+            });
+        } else {
+            $('#registerSuccessModal').modal('show');
+        }
     });
 });
