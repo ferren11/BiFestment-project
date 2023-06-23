@@ -44,7 +44,7 @@ Pitch Deck:
 6. Untuk melihat daftar _event_ yang telah diregistrasi, pengguna dapat menuju ke halaman _My Events_. Navigasi untuk ke halaman _My Events_ dapat dilihat pada _navigation bar_. 
 
 **Untuk pemahaman yang lebih lanjut, Anda bisa mengakses:** <br>
-Dokumentasi user guide: [BiFestment User Guide]() <br>
+Dokumentasi user guide: [BiFestment User Guide](https://drive.google.com/file/d/15GygkC4iqKB-sgfg8kpMaLBYXnU29GzK/view?usp=sharing) <br>
 Video demo aplikasi: [YouTube Demo BiFestment](https://www.youtube.com/watch?v=7NEz2ENHUwQ)
 
 ## Anggota Kelompok
