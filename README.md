@@ -1,4 +1,4 @@
-## Deskripsi
+# BiFestment
 BiFestment merupakan aplikasi berbasis web yang mengintegrasikan informasi dan pendaftaran acara pengembangan diri, seperti seminar, workshop, dan bootcamp di lingkup BINUS University.
 
 **_Application Requirement_**
